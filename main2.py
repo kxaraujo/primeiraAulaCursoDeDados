@@ -21,7 +21,6 @@ print("5 - Render Poupanca")
 print('-------------------------------------------------------------------------------------')
 print("6 - Render Bonus")
 print('-------------------------------------------------------------------------------------')
-
 escolha = int(input("digite a opção desejada:"))
 while escolha > 0:
     if escolha == 1:
@@ -69,11 +68,10 @@ while escolha > 0:
     elif escolha == 6:
         print("Rendendo Bonificação...")
         numConta = int(input("digite o numero da conta:"))
-        resp =bancoUfrpe.renderBonus(numConta)
+        resp = bancoUfrpe.renderbonus(numConta)
         if resp:
             print("Conta com novo saldo")
         else:
             print("A conta não existe")       
-    
     
     escolha = int(input("digite a opção desejada:"))

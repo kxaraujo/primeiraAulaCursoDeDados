@@ -17,20 +17,17 @@ class Conta():
         else:
             return False
 
-    def renderbonus(self):
+    def renderBonus(self):
         if self.bonus != 0:
             self.saldo += self.bonus
             self.bonus = 0
-                                   
-
-
+                                
 class Poupanca(Conta):
-    def render(self):
+    def renderBonus(self):
         self.saldo *= 0.999
         
-
 class ContaBonificada(Conta):
-    def renderBonusB(self):
+    def renderBonus(self):
         self.saldo += self.bonus
         
         
@@ -56,7 +53,7 @@ class Banco():
 
     def contaBonificada(self):
         num = random.randint(0, 1000)
-        p = contaBonificada(num)
+        p = ContaBonificada(num)
         self.contas.append(p)
         return num  
 
@@ -83,12 +80,12 @@ class Banco():
                 return True
         return False
 
-    def renderBonus(self,numConta):
+    def bonus(self,numConta):
         for i in self.contas:
             if i.numero == numConta and isinstance(i,ContaBonificada):
-                i.renderBonusB()
+                i.bonus()
                 return True   
             elif isinstance(i,Poupanca) or isinstance(i,Conta):
-                i.renderbonus()
+                i.bonus()
                 return True
         return False
