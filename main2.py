@@ -1,5 +1,5 @@
 from BancoLib import Banco
-f
+
 print(' ')
 print('-------------------------------------------------------------------------------------')
 print('                            BEM VINDO AO BANCO UABJ                                  ')
