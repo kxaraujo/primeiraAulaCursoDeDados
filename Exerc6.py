@@ -5,26 +5,22 @@
 def valorPagamento(prestacao, atraso):
        
     if atraso == 0:
-        valor = prestacao
-        print(valor)
+        return prestacao
     else:
-        valor = (prestacao + prestacao * 0.03 + 0.01 * atraso)
-        print(valor)
-        
-    prestacao = 0
-    atraso = 0
-    quantia = 0
-    valorTotal = 0
-    cont = 0
+        valorPagamento = prestacao + prestacao * 0.3
+        for i in range (atraso):
+            valorPagamento = valorPagamento * 000.1
+        return valorPagamento
 
-while True:
-    valor = float(input('Digite o valor da prestação: '))
-    if valor == 0:
-        print('Quantidade total de prestações: ', cont)
-        print('Valor total das prestações: ', valorTotal)
-    atraso = float(input('Digite o número de dias em atraso: '))
-    valorTotal += valorPagamento(prestacao, atraso)
-    cont += 1
+soma = 0
+qntd = 0
+prestacao = float(input("valor da prestação:"))
+atraso = float(input("dias de atraso:"))
+
+while (prestacao > 0):
+    valorPagamento = valorPagamento(prestacao, atraso)
+    print("o valor da prestação é: ", prestacao)
+    valorTotal = valorTotal + 
 
 
 print('Prestações pagas:' , quantia)
